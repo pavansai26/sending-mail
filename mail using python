@@ -1,0 +1,14 @@
+import smtplib
+email_address='abcdefgh@gmail.com'
+email_password='123456789'
+with smtplib.SMTP('smtp.gmail.com',587)as smtp:
+	smtp.ehlo()
+	smtp.starttls()
+	smtp.ehlo()
+	smtp.login(email_address,email_password)
+	subject='hi how are you'
+	body='fine'
+	body1='what are you doing'
+	msg=f'subject:{subject}\n\n{body}\n{body1}'
+	smtp.sendmail(email_address,'mnbvc@gmail.com',msg)
+
